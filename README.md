@@ -6,7 +6,7 @@ Demo host app for the [Box Content Preview UI Element](https://developer.box.com
 Setup
 -----
 1. Clone this repo via `git clone git@github.com:box/box-content-preview-demo.git`.
-2. Add auth token to [src/index.js].
+2. Add auth token to [src/index.js](src/index.js).
 3. Run `yarn deploy` to run the webpack dev server.
 4. Navigate to http://localhost:8080.
 
