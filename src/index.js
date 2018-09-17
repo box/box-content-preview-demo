@@ -13,23 +13,26 @@ import './index.scss';
 // Not needed unless working with non "en" locales
 // addLocaleData(enLocaleData);
 
-const FILE_ID_DOC = '93392244621';
-const FILE_ID_VIDEO = '101504801571';
-const FILE_ID_3D = '101532838591';
-const FILE_ID_TEXT = '101524518971';
-const FILE_ID_EXCEL = '173493670106';
+const FILE_ID_DOC = '308339768087';
+const FILE_ID_VIDEO = '308566420378';
+const FILE_ID_3D = '319004423111';
+const FILE_ID_TEXT = '308349801521';
+const FILE_ID_EXCEL = '319011536090';
+const FILE_ID_AUDIO = '308566419514';
+const FILE_ID_IMAGE = '308345646235';
 
 const container = document.querySelector('.container');
-const token = 'EqFyi1Yq1tD9mxY8F38sxDfp73pFd7FP';
+const token = 'aiMADZorjZDCJEfi7zREbvHBo2K70MXf';
 const language = 'en-US';
 
 render(
     <ContentPreview
+        hasHeader
         fileId={FILE_ID_DOC}
         token={token}
         language={language}
         messages={messages}
-        collection={[FILE_ID_DOC, FILE_ID_EXCEL, FILE_ID_VIDEO, FILE_ID_3D, FILE_ID_TEXT]}
+        collection={[FILE_ID_DOC, FILE_ID_EXCEL, FILE_ID_VIDEO, FILE_ID_3D, FILE_ID_TEXT, FILE_ID_AUDIO, FILE_ID_IMAGE]}
     />,
     container
 );

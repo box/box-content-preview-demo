@@ -1,14 +1,24 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const safeParser = require('postcss-safe-parser');
 const path = require('path');
 
 module.exports = {
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     entry: {
         index: path.resolve('src/index.js')
     },
     output: {
         path: path.resolve('dist'),
         filename: '[name].js'
+    },
+    resolve: {
+        alias: {
+            moment: path.resolve('node_modules/box-ui-elements/lib/util/MomentShim') // Hack to leverage Intl instead
+        }
+    },
+    devServer: {
+        host: '0.0.0.0'
     },
     module: {
         rules: [
@@ -19,25 +29,13 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: { importLoaders: 1 }
-                        },
-                        {
-                            loader: 'sass-loader'
-                        }
-                    ]
-                })
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin({
-            filename: '[name].css',
-            allChunks: true
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
         })
     ]
 };
