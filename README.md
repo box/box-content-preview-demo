@@ -7,7 +7,7 @@ Setup
 -----
 1. Clone this repo via `git clone git@github.com:box/box-content-preview-demo.git`.
 2. Add auth token to [src/index.js](src/index.js).
-3. Run `yarn deploy` to run the webpack dev server.
+3. Run `yarn start` to run the webpack dev server.
 4. Navigate to http://localhost:8080.
 
 **Note: The above instruction steps assume webpack dev server is running on port 8080. If it runs on another port, you will have use that instead in the instructions above.**

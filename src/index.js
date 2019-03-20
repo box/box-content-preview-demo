@@ -5,9 +5,8 @@ import { render } from 'react-dom';
 // import { addLocaleData } from 'react-intl';
 // import enLocaleData from 'react-intl/locale-data/en';
 
-import ContentPreview from 'box-ui-elements/lib/components/ContentPreview';
+import ContentPreview from 'box-ui-elements/es/elements/content-preview';
 import messages from 'box-ui-elements/i18n/en-US';
-import 'box-ui-elements/dist/preview.css';
 import './index.scss';
 
 // Not needed unless working with non "en" locales
